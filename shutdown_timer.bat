@@ -15,7 +15,10 @@ if %errorLevel% neq 0 (
 :input
 cls
 set "isnumber=false"
-set /p minutes=Enter the number of minutes until the shutdown: 
+set minMinutes=1
+set maxMinutes=1440
+set /a maxHours=%maxMinutes%/60
+set /p minutes=Enter the number of minutes until the shutdown (between %minMinutes% and %maxMinutes% corresponding to %maxHours% hours): 
 
 :: Check if the input is empty.
 if "%minutes%"=="" (
@@ -32,18 +35,30 @@ if "%isnumber%" == "true" (
     goto input
 )
 
+:: Check if the input is within the allowed range.
+if %minutes% lss %minMinutes% (
+    echo The number of minutes cannot be less than %minMinutes%. Please enter a valid number.
+    timeout /t 2 /nobreak >nul
+    goto input
+)
+
+if %minutes% gtr %maxMinutes% (
+    echo The number of minutes cannot exceed %maxMinutes%. Please enter a valid number.
+    timeout /t 2 /nobreak >nul
+    goto input
+)
+
 set /a seconds=%minutes%*60
 set /a hh=%seconds%/3600
 set /a mm=(%seconds% %% 3600) / 60
 
-:: Set singular or plural text for hours.
+:: Set singular or plural text.
 if %hh% EQU 1 (
     set hourText=hour
 ) else (
     set hourText=hours
 )
 
-:: Set singular or plural text for minutes.
 if %mm% EQU 1 (
     set minuteText=minute
 ) else (
@@ -55,7 +70,6 @@ powershell -command "Add-Type -AssemblyName PresentationFramework; [System.Windo
 
 :countdown
 cls
-:: Update hours, minutes, and seconds for the countdown.
 set /a hh=%seconds%/3600
 set /a mm=(%seconds% %% 3600) / 60
 set /a ss=%seconds% %% 60
