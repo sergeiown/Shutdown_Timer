@@ -48,7 +48,7 @@ if %mm% EQU 1 (
 )
 
 :: Display a message box with the countdown details and minimize open windows.
-powershell -command "Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('The shutdown timer has been set for %hh% %hourText% %mm% %minuteText% and is now running.', 'Timer Started'); $shell = New-Object -ComObject Shell.Application; $shell.minimizeall()"
+powershell -command "Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('The shutdown timer is set to %hh% %hourText% %mm% %minuteText% and will start after clicking OK.', 'Timer Started'); $shell = New-Object -ComObject Shell.Application; $shell.minimizeall()"
 
 :countdown
 cls
