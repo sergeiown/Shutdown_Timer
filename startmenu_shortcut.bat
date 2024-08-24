@@ -1,3 +1,6 @@
+:: Copyright (c) 2024 Serhii I. Myshko
+:: https://github.com/sergeiown/Shutdown_Timer/blob/main/LICENSE
+
 @echo off
 set shortcutName=Shutdown Timer
 set shortcutTargetDescription=Run Shutdown Timer
