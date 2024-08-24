@@ -14,6 +14,7 @@ if %errorLevel% neq 0 (
 
 :input
 cls
+set "minutes="
 set "isnumber=false"
 set minMinutes=1
 set maxMinutes=1440
@@ -21,8 +22,8 @@ set /a maxHours=%maxMinutes%/60
 set /p minutes=Enter the number of minutes until the shutdown (between %minMinutes% and %maxMinutes% corresponding to %maxHours% hours): 
 
 :: Check if the input is empty.
-if "%minutes%"=="" (
-    echo Input cannot be empty. Please enter a number.
+if not defined minutes (
+    echo. & echo Input cannot be empty. Please enter a number.
     timeout /t 2 /nobreak >nul
     goto input
 )
@@ -30,20 +31,18 @@ if "%minutes%"=="" (
 :: Validate if the input is a number.
 for /f "delims=0123456789" %%a in ("%minutes%") do set "isnumber=true"
 if "%isnumber%" == "true" (
-    echo Invalid input. Please enter a number.
+    echo. & echo Invalid input. Please enter a number.
     timeout /t 2 /nobreak >nul
     goto input
 )
 
 :: Check if the input is within the allowed range.
 if %minutes% lss %minMinutes% (
-    echo The number of minutes cannot be less than %minMinutes%. Please enter a valid number.
+    echo. & echo The number of minutes cannot be less than %minMinutes%. Please enter a valid number.
     timeout /t 2 /nobreak >nul
     goto input
-)
-
-if %minutes% gtr %maxMinutes% (
-    echo The number of minutes cannot exceed %maxMinutes%. Please enter a valid number.
+) else if %minutes% gtr %maxMinutes% (
+    echo. & echo The number of minutes cannot exceed %maxMinutes%. Please enter a valid number.
     timeout /t 2 /nobreak >nul
     goto input
 )
