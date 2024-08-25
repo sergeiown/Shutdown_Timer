@@ -1,8 +1,6 @@
-# Shutdown Timer
+#  ![logo](https://github.com/user-attachments/assets/673b0697-16ed-4865-8cca-c1e0cbe66089) Shutdown Timer
 
 This project provides a simple and efficient batch script to schedule a system shutdown after a user-defined number of minutes. It also includes a utility script to create a shortcut to the main script in the Start Menu.
-
-![image](https://github.com/user-attachments/assets/3cc73bfd-1e48-4278-9d1e-19008f49dc96)
 
 ## Motivation
 
@@ -37,6 +35,8 @@ Windows does not include a straightforward, user-friendly way to schedule a shut
     - Double-click `shutdown_timer.bat` or run it from the command line.
     - The script will ask for the number of minutes until shutdown.
     - It will then validate the input, start the countdown, and finally shut down the system when the timer expires.
+
+![image](https://github.com/user-attachments/assets/3cc73bfd-1e48-4278-9d1e-19008f49dc96)
 
 ### Creating a Start Menu Shortcut
 
