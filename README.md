@@ -29,21 +29,11 @@ Windows does not include a straightforward, user-friendly way to schedule a shut
 
 ## Usage
 
-### Running the Shutdown Timer
+|  |  |
+|:------|:----------:|
+| **Run `shutdown_timer.bat`:** <br> - Double-click `shutdown_timer.bat` or run it from the command line. <br> - The script will prompt for the number of minutes until shutdown. <br> - After validating the input, the countdown will start, and the system will shut down when the timer expires. | ![image](https://github.com/user-attachments/assets/3cc73bfd-1e48-4278-9d1e-19008f49dc96) |
+| **Run `startmenu_shortcut.bat`:** <br> - This will create a shortcut named "Shutdown Timer" in your Start Menu for easy access. <br> - The shortcut will be linked to the `shutdown_timer.bat` script, with an appropriate icon. <br> - **Hotkey:** By default, the shortcut is set with the `Ctrl + Alt + T` combination. You can quickly access the Shutdown Timer by pressing these keys. | ![image](https://github.com/user-attachments/assets/d5d44932-8ceb-4d05-8d03-e123af76f18b) |
 
-- **Run `shutdown_timer.bat`:**
-    - Double-click `shutdown_timer.bat` or run it from the command line.
-    - The script will prompt for the number of minutes until shutdown.
-    - After validating the input, the countdown will start, and the system will shut down when the timer expires.
-
-![image](https://github.com/user-attachments/assets/3cc73bfd-1e48-4278-9d1e-19008f49dc96)
-
-### Creating a Start Menu Shortcut
-
-- **Run `startmenu_shortcut.bat`:**
-    - This will create a shortcut named "Shutdown Timer" in your Start Menu for easy access.
-    - The shortcut will be linked to the `shutdown_timer.bat` script, with an appropriate icon.
-    - **Hotkey:** By default, the shortcut is set with the `Ctrl + Alt + T` combination. You can quickly access the Shutdown Timer by pressing these keys.
 
 ## License
 
