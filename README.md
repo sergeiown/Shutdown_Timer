@@ -1,4 +1,4 @@
-# ![logo](https://github.com/user-attachments/assets/673b0697-16ed-4865-8cca-c1e0cbe66089) Shutdown Timer
+# [![logo](https://github.com/user-attachments/assets/673b0697-16ed-4865-8cca-c1e0cbe66089) Shutdown Timer](https://github.com/sergeiown/Shutdown_Timer)
 
 This project provides a simple and efficient batch script to schedule a system shutdown after a user-defined number of minutes. It also includes a utility script to create a shortcut to the main script in the Start Menu.
 
