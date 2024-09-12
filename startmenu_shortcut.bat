@@ -12,10 +12,11 @@ set workingDirectory=%CD%
 set hotKey=Ctrl+Alt+T
 
 if exist "%shortcutPath%" (
+    echo The shortcut "%shortcutPath%" exists. & echo. & echo Deleting the shortcut. & echo.
     del "%shortcutPath%"
+) else (
+    echo Creating the shortcut %shortcutPath% & echo.
+    powershell -Command "$WScript=New-Object -ComObject WScript.Shell; $Shortcut=$WScript.CreateShortcut('%shortcutPath%'); $Shortcut.TargetPath='%targetPath%'; $Shortcut.IconLocation='%iconPath%'; $Shortcut.WorkingDirectory='%workingDirectory%'; $Shortcut.Description='%shortcutTargetDescription%'; $Shortcut.Hotkey='%hotKey%'; $Shortcut.WindowStyle=1; $Shortcut.Save()"
 )
-
-echo Creating the shortcut %shortcutPath% & echo.
-powershell -Command "$WScript=New-Object -ComObject WScript.Shell; $Shortcut=$WScript.CreateShortcut('%shortcutPath%'); $Shortcut.TargetPath='%targetPath%'; $Shortcut.IconLocation='%iconPath%'; $Shortcut.WorkingDirectory='%workingDirectory%'; $Shortcut.Description='%shortcutTargetDescription%'; $Shortcut.Hotkey='%hotKey%'; $Shortcut.WindowStyle=1; $Shortcut.Save()"
 
 echo The operation is complete. & echo. & pause
