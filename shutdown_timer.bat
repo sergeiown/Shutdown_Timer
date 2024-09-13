@@ -2,6 +2,7 @@
 :: https://github.com/sergeiown/Shutdown_Timer/blob/main/LICENSE
 
 @echo off
+title Shutdown Timer
 setlocal enabledelayedexpansion
 
 :: Check if the script is running with administrator rights.
