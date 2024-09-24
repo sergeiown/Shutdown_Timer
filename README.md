@@ -20,6 +20,10 @@ Windows does not include a straightforward, user-friendly way to schedule a shut
 - **PowerShell:** Pre-installed on most Windows systems (used for message box notifications).
 - **Administrator Rights:** Required to initiate a shutdown.
 
+<a href="https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions">
+    <img src="https://github.com/user-attachments/assets/db2b5487-b5bf-45d9-8948-48bb88162f17" alt="windows_compatibility" style="width:20%;"/>
+</a>
+
 ## Installation
 
 - **Clone the repository** or download the scripts:
